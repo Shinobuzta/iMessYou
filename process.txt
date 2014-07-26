@@ -1,93 +1,96 @@
-USERS
-------------
-id
-username
-imei
-contacts
+// USERS
+// ------------
+// id
+// username
+// imei
+// contacts
 
 
 
-IMAGES
-------------
-id
-image_path
-user_id
-dest_id
-viewed
-timestamp
+// IMAGES
+// ------------
+// id
+// image_path
+// user_id
+// dest_id
+// viewed
+// timestamp
 
 
-PreAuth
-http://host/preauth.php
+// PreAuth
+// http://host/preauth.php
 
-::request [POST]
+// ::request [POST]
 {
-	imei: 1234567890
-}
-
-:::success
-{
-	success: true,
-	username: user1,
-	userid: 1
-}
-
-:::fail
-{
-	success: false
-}
-
-
-
-
-Register
-http://host/register.php
-
-::request [POST]
-{
-	username: user1,
-	imei: 1234567890
-}
-
-:::success
-{
-	success: true,
-	userid: 1
-}
-
-:::fail
-{
-	success: false,
-	message: "How come you fail?"
-}
-
-
-
-
-
-GetContacts
-http://host/getContacts.php
-
-::request [POST]
-{
-	userid: 1,
-	imei: 1234567890
-}
-
-:::success
-{
-	success: true,
-	contacts: {
-		user1: 1,
-		user2: 2,
-		user3: 3
+	"imei": 1234567890,
+	"contacts": {
+		"user1": 1,
+		"user2": 2,
+		"user3": 3
 	} 
 }
 
-:::fail
+// :::success
 {
-	success: false,
-	message: "How come you fail?"
+	"success": true,
+	"username": "user1",
+	"userid": 1
+}
+
+// :::fail
+{
+	"success": false
+}
+
+
+
+
+// Register
+// http://host/register.php
+
+// ::request [POST]
+{
+	"username": "user1",
+	"imei": 1234567890
+}
+
+// :::success
+{
+	"success": true,
+	"userid": 1
+}
+
+// :::fail
+{
+	"success": false,
+	"message": "How come you fail?"
+}
+
+
+
+// GetContacts
+// http://host/getContacts.php
+
+// ::request [POST]
+{
+	"userid": 1,
+	"imei": 1234567890
+}
+
+// :::success
+{
+	"success": true,
+	"contacts": {
+		"user1": 1,
+		"user2": 2,
+		"user3": 3
+	} 
+}
+
+// :::fail
+{
+	"success": false,
+	"message": "How come you fail?"
 }
 
 
@@ -96,21 +99,31 @@ http://host/getContacts.php
 
 
 
+// SendImage
+// http://host/sendImage.php
 
-
-
-
-
-
-
-
-
-
-
+// ::request [POST]
 {
-	"user_id": 1,
-	"user_imei": "1234567890",
-	"image": sdasdasdasdas,
-	"rvr_id":2,
+	"sndr_id": 1,
+	"imei": "1234567890",
+	"rcvr_id":2,
+	"image": "sdasdasdasdas",
 	"message":"dsahdjashdjas"
 }
+
+
+// :::success
+{
+	"success": true
+}
+
+// :::fail
+{
+	"success": false,
+	"message": "How come you fail?"
+}
+
+
+
+
+

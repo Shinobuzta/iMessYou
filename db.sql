@@ -17,12 +17,3 @@ create table images(
 	foreign key (sndr_id) references users(id),
 	foreign key (rcvr_id) references users(id)
 );
-
-create table images(
-	id int(11) not null auto_increment,
-	user_id int(11) not null,
-	contact_id int(11) not null,
-	primary key (id),
-	foreign key (user_id) references users(id),
-	foreign key (contact_id) references users(id)
-);
