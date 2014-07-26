@@ -16,5 +16,27 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    <style name="SeparatorHorizontalBlue">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/separator_vertical_height</item>
+        <item name="android:background">@color/silver</item>
+    </style>
 
+    <style name="SeparatorVerticalBlue">
+        <item name="android:layout_width">@dimen/separator_vertical_height</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/light_blue</item>
+    </style>
+
+      <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="color_blue">#009999</color>
+    <color name="light_blue">#007FEE</color>
+    <color name="footer_color">#717171</color>
+    <color name="color_edit_text">#E7E7E7</color>
+    <color name="silver">#CFCFCF</color>
+    <color name="parpol">#622855</color>
+    
+    
 </resources>
