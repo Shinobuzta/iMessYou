@@ -16,93 +16,54 @@
 // viewed
 // timestamp
 
-
+// ----------------------------------
 // PreAuth
 // http://host/preauth.php
-
 // ::request [POST]
+// ----------------------------------
 {
-	"imei": 1234567890,
-	"contacts": {
-		"user1": 1,
-		"user2": 2,
-		"user3": 3
-	} 
-}
-
-// :::success
-{
-	"success": true,
-	"username": "user1",
-	"userid": 1
-}
-
-// :::fail
-{
-	"success": false
+	"imei": 1234567890
 }
 
 
 
-
+// ----------------------------------
 // Register
 // http://host/register.php
-
 // ::request [POST]
+// ----------------------------------
 {
 	"username": "user1",
 	"imei": 1234567890
 }
 
-// :::success
-{
-	"success": true,
-	"userid": 1
-}
 
-// :::fail
-{
-	"success": false,
-	"message": "How come you fail?"
-}
-
-
-
+// ----------------------------------
 // GetContacts
 // http://host/getContacts.php
-
 // ::request [POST]
+// ----------------------------------
 {
-	"userid": 1,
 	"imei": 1234567890
 }
 
-// :::success
-{
-	"success": true,
-	"contacts": {
-		"user1": 1,
-		"user2": 2,
-		"user3": 3
-	} 
-}
 
-// :::fail
+// ----------------------------------
+// AddContacts
+// http://host/addContacts.php
+// ::request [POST]
+// ----------------------------------
 {
-	"success": false,
-	"message": "How come you fail?"
+	"imei": 1234567890,
+	"username": "user2"
 }
 
 
-
-
-
-
-
+// ----------------------------------
 // SendImage
 // http://host/sendImage.php
-
 // ::request [POST]
+// ----------------------------------
 {
 	"sndr_id": 1,
 	"imei": "1234567890",
@@ -112,16 +73,76 @@
 }
 
 
-// :::success
+
+
+
+
+
+// FAIL_RESPONSE
+// Send Image
 {
-	"success": true
+	"success":false,
+	"message":""
 }
 
-// :::fail
+
+// PreAuth
 {
-	"success": false,
-	"message": "How come you fail?"
+	"success":true,
+	"message":"",
+	"username": "user1",
+	"userid": 1 ,
+	"contacts":[
+		{
+			"username":"user1",
+			"id": 1
+		},
+		{
+			"username":"user2",
+			"id": 2
+		},
+		{
+			"username":"user3",
+			"id": 3
+		}
+	]
 }
+
+// Register
+{
+	"success":true,
+	"message":"",
+	"username": "user1",
+	"userid": 1 
+}
+
+// GetContacts
+// AddContacts
+{
+	"success":true,
+	"message":"",
+	"contacts":[
+		{
+			"username":"user1",
+			"id": 1
+		},
+		{
+			"username":"user2",
+			"id": 2
+		},
+		{
+			"username":"user3",
+			"id": 3
+		}
+	]
+}
+
+
+
+
+
+
+
 
 
 

@@ -17,3 +17,6 @@ create table images(
 	foreign key (sndr_id) references users(id),
 	foreign key (rcvr_id) references users(id)
 );
+
+
+insert into users (username,imei,contacts) values ('user1','1234567890','');
