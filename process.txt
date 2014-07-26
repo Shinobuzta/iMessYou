@@ -18,10 +18,20 @@
 
 // ----------------------------------
 // PreAuth
-// http://host/preauth.php
 // ::request [POST]
 // ----------------------------------
 {
+	"action": "preAuth",
+	"imei": 1234567890
+}
+
+
+// ----------------------------------
+// GetContacts
+// ::request [POST]
+// ----------------------------------
+{
+	"action": "getContacts",
 	"imei": 1234567890
 }
 
@@ -29,44 +39,33 @@
 
 // ----------------------------------
 // Register
-// http://host/register.php
 // ::request [POST]
 // ----------------------------------
 {
+	"action": "register",
 	"username": "user1",
 	"imei": 1234567890
 }
 
 
 // ----------------------------------
-// GetContacts
-// http://host/getContacts.php
+// AddContacts
 // ::request [POST]
 // ----------------------------------
 {
+	"action": "addContact",
+	"username": "user2",
 	"imei": 1234567890
 }
 
 
 // ----------------------------------
-// AddContacts
-// http://host/addContacts.php
-// ::request [POST]
-// ----------------------------------
-{
-	"imei": 1234567890,
-	"username": "user2"
-}
-
-
-// ----------------------------------
 // SendImage
-// http://host/sendImage.php
 // ::request [POST]
 // ----------------------------------
 {
-	"sndr_id": 1,
-	"imei": "1234567890",
+	"action": "sendImage",
+	"imei": 1234567890,
 	"rcvr_id":2,
 	"image": "sdasdasdasdas",
 	"message":"dsahdjashdjas"
@@ -78,17 +77,21 @@
 
 
 
+// ----------------------------------
 // FAIL_RESPONSE
 // Send Image
+// ----------------------------------
 {
 	"success":false,
 	"message":""
 }
 
 
+// ----------------------------------
 // PreAuth
+// ----------------------------------
 {
-	"success":true,
+	"success":true
 	"message":"",
 	"username": "user1",
 	"userid": 1 ,
@@ -108,7 +111,9 @@
 	]
 }
 
+// ----------------------------------
 // Register
+// ----------------------------------
 {
 	"success":true,
 	"message":"",
@@ -116,8 +121,10 @@
 	"userid": 1 
 }
 
+// ----------------------------------
 // GetContacts
 // AddContacts
+// ----------------------------------
 {
 	"success":true,
 	"message":"",
