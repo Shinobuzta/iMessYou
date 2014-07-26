@@ -1,0 +1,116 @@
+USERS
+------------
+id
+username
+imei
+contacts
+
+
+
+IMAGES
+------------
+id
+image_path
+user_id
+dest_id
+viewed
+timestamp
+
+
+PreAuth
+http://host/preauth.php
+
+::request [POST]
+{
+	imei: 1234567890
+}
+
+:::success
+{
+	success: true,
+	username: user1,
+	userid: 1
+}
+
+:::fail
+{
+	success: false
+}
+
+
+
+
+Register
+http://host/register.php
+
+::request [POST]
+{
+	username: user1,
+	imei: 1234567890
+}
+
+:::success
+{
+	success: true,
+	userid: 1
+}
+
+:::fail
+{
+	success: false,
+	message: "How come you fail?"
+}
+
+
+
+
+
+GetContacts
+http://host/getContacts.php
+
+::request [POST]
+{
+	userid: 1,
+	imei: 1234567890
+}
+
+:::success
+{
+	success: true,
+	contacts: {
+		user1: 1,
+		user2: 2,
+		user3: 3
+	} 
+}
+
+:::fail
+{
+	success: false,
+	message: "How come you fail?"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+	"user_id": 1,
+	"user_imei": "1234567890",
+	"image": sdasdasdasdas,
+	"rvr_id":2,
+	"message":"dsahdjashdjas"
+}
